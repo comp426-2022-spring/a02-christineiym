@@ -1,3 +1,6 @@
+const HEADS = 'heads';
+const TAILS = 'tails';
+
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
@@ -10,12 +13,13 @@
  * @returns {string} 
  * 
  * example: coinFlip()
- * returns: heads
+ * returns: heads | tails
  * 
  */
 
-function coinFlip() {
-
+export function coinFlip() {
+  // Randomize the flip with randomize or math
+  return (Math.round(Math.random()) == 0) ? HEADS : TAILS;
 }
 
 /** Multiple coin flips
