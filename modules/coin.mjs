@@ -1,5 +1,6 @@
-const HEADS = 'heads';
-const TAILS = 'tails';
+const HEADS = 'heads'
+const TAILS = 'tails'
+
 
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
@@ -19,7 +20,7 @@ const TAILS = 'tails';
 
 export function coinFlip() {
   // Randomize the flip with randomize or math
-  return (Math.round(Math.random()) == 0) ? HEADS : TAILS;
+  return (Math.round(Math.random()) == 0) ? HEADS : TAILS
 }
 
 /** Multiple coin flips
@@ -41,8 +42,12 @@ export function coinFlip() {
     ]
  */
 
-function coinFlips(flips) {
+export function coinFlips(flips) {
+  var allFlips = [];
 
+  for (let i = 0; i < flips; i++) {
+    allFlips.push(coinFlip())
+  }
 }
 
 /** Count multiple flips
@@ -58,8 +63,21 @@ function coinFlips(flips) {
  * @returns {{ heads: number, tails: number }}
  */
 
-function countFlips(array) {
+export function countFlips(array) {
+  var summary = {
+    HEADS: 0,
+    TAILS: 0
+  }
 
+  array.forEach(flip => {
+    if (flip === HEADS) {
+      summary.HEADS++
+    } else if (flip === TAILS) {
+      summary.TAILS++
+    }
+  })
+
+  return summary
 }
 
 /** Flip a coin!
