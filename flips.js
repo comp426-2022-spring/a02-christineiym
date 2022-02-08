@@ -1,11 +1,11 @@
 // Define necessary constants.
-const minimist = require('minimist')
-const { exit } = require('process')
 const START_ARG_NUM = 2
 const DEFAULT_NUM_FLIPS = 1
 
 // Import the coinFlips and countFlips functions from your coin.mjs file
 import { coinFlips, countFlips } from "./modules/coin.mjs"
+import minimist from "minimist"
+import process from "process"
 
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
 const allArguments = minimist(process.argv.slice(START_ARG_NUM))

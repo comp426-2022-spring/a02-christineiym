@@ -48,6 +48,8 @@ export function coinFlips(flips) {
   for (let i = 0; i < flips; i++) {
     allFlips.push(coinFlip())
   }
+
+  return allFlips
 }
 
 /** Count multiple flips
@@ -68,7 +70,7 @@ export function countFlips(array) {
     HEADS: 0,
     TAILS: 0
   }
-
+  // TODO: account for undefined input?
   array.forEach(flip => {
     if (flip === HEADS) {
       summary.HEADS++
