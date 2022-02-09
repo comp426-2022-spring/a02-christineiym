@@ -1,5 +1,7 @@
 const HEADS = 'heads'
 const TAILS = 'tails'
+const WIN = 'win'
+const LOSE = 'lose'
 
 
 /** Coin flip functions 
@@ -93,8 +95,21 @@ export function countFlips(array) {
  * returns: { call: 'tails', flip: 'heads', result: 'lose' }
  */
 
-function flipACoin(call) {
+export function flipACoin(call) {
+  if (call === HEADS || call === TAILS) {
+    var resultsSummary = {
+      call: call,
+      flip: coinFlip(),
+      result: null
+    }
 
+    resultsSummary.result = ((resultsSummary.call === resultsSummary.flip) ? WIN : LOSE)
+    return resultsSummary
+  } else if (call === "" || call == null) {
+    throw 'Error: No input.'
+  } else {
+    throw 'Error: Invalid input.'
+  }
 }
 
 
