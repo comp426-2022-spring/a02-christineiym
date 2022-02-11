@@ -81,6 +81,13 @@ export function countFlips(array) {
     }
   })
 
+  // Remove uneccessary properties.
+  if (summary.heads == 0) {
+    delete summary.heads
+  } else if (summary.tails == 0) {
+    delete summary.tails
+  }
+
   return summary
 }
 
@@ -106,9 +113,9 @@ export function flipACoin(call) {
     resultsSummary.result = ((resultsSummary.call === resultsSummary.flip) ? WIN : LOSE)
     return resultsSummary
   } else if (call === "" || call == null) {
-    throw 'Error: No input.'
+    throw 'Error: no input.'
   } else {
-    throw 'Error: Invalid input.'
+    throw 'Usage: node guess-flip --call=[heads|tails]'
   }
 }
 
