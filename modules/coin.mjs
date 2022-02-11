@@ -69,15 +69,15 @@ export function coinFlips(flips) {
 
 export function countFlips(array) {
   var summary = {
-    HEADS: 0,
-    TAILS: 0
+    heads: 0,
+    tails: 0
   }
   // TODO: account for undefined input?
   array.forEach(flip => {
     if (flip === HEADS) {
-      summary.HEADS++
+      summary.heads++
     } else if (flip === TAILS) {
-      summary.TAILS++
+      summary.tails++
     }
   })
 

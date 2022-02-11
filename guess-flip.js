@@ -20,5 +20,5 @@ try {
     console.log(coinFlipResult)
 } catch (e) {
     console.log(e)
-    console.log('Usage: node guess-flip --call=[heads|tails]')
+    // console.log('Usage: node guess-flip --call=[heads|tails]')
 }
